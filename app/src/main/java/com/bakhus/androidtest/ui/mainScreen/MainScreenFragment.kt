@@ -22,9 +22,7 @@ import java.util.*
 @AndroidEntryPoint
 class MainScreenFragment : Fragment() {
 
-
     private val viewModel: MainScreenViewModel by viewModels()
-
     private var _binding: MainScreenFragmentBinding? = null
     private val binding get() = _binding!!
     private var photo:Uri? = null
@@ -37,10 +35,8 @@ class MainScreenFragment : Fragment() {
         return binding.root
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        selectPhoto()
         pickupDate()
         subscribeToObservers()
         val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
@@ -60,7 +56,6 @@ class MainScreenFragment : Fragment() {
             val hobby = binding.auTvChooseSetvice.text.toString()
 
             photo?.let { it1 -> viewModel.updateProfile(avatar = it1,name, surname, birthPlace, birthDate, organization, position, hobby) }
-
         }
     }
 
@@ -104,10 +99,6 @@ class MainScreenFragment : Fragment() {
         val services = resources.getStringArray(R.array.interesting_themes)
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, services)
         binding.auTvChooseSetvice.setAdapter(arrayAdapter)
-    }
-
-    private fun selectPhoto() {
-
     }
 
     override fun onDestroyView() {

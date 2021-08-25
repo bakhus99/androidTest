@@ -1,11 +1,9 @@
 package com.bakhus.androidtest.repository
 
-import android.app.Application
 import android.net.Uri
 import com.bakhus.androidtest.data.InterfaceApi
 import com.bakhus.androidtest.data.requests.AccountRequests
 import com.bakhus.androidtest.data.requests.ProfileRequest
-import com.bakhus.androidtest.data.requests.SendImage
 import com.bakhus.androidtest.data.requests.UserBody
 import com.bakhus.androidtest.util.Resource
 import kotlinx.coroutines.Dispatchers
@@ -13,22 +11,8 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class Repository @Inject constructor(
-    private val context: Application,
     private val api: InterfaceApi
 ) {
-
-    suspend fun sendPhoto(uri: Uri) = withContext(Dispatchers.IO) {
-        try {
-            val response = api.uploadAvatar(SendImage(uri))
-            if (response.isSuccessful){
-                Resource.success(response.body())
-            }else{
-                Resource.error(response.message(),null)
-            }
-        }catch (e:Exception){
-            Resource.error("Coudn't connect to server check your internet connection", null)
-        }
-    }
 
     suspend fun updateProfile(avatar:Uri,name:String,surname: String,birthPlace:String,birthDate:String,organization:String,position:String,hobby:String) = withContext(Dispatchers.IO){
         try {
@@ -41,8 +25,6 @@ class Repository @Inject constructor(
         }catch (e:Exception){
             Resource.error("Coudn't connect to server check your internet connection", null)
         }
-
-
     }
 
     suspend fun login(email: String, password: String) =

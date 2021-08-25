@@ -16,8 +16,6 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
-
-
     @Provides
     @Singleton
     fun provideApi(): InterfaceApi {
@@ -31,5 +29,4 @@ object AppModule {
             .build()
             .create(InterfaceApi::class.java)
     }
-
 }

@@ -1,6 +1,9 @@
 package com.bakhus.androidtest.data
 
-import com.bakhus.androidtest.data.requests.*
+import com.bakhus.androidtest.data.requests.AccountRequests
+import com.bakhus.androidtest.data.requests.ProfileRequest
+import com.bakhus.androidtest.data.requests.SimpleResponse
+import com.bakhus.androidtest.data.requests.UserBody
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.POST
@@ -21,13 +24,5 @@ interface InterfaceApi {
     suspend fun updateProfile(
         @Body updateProfile: ProfileRequest
     ):Response<SimpleResponse>
-
-    @POST("uploadAvatar")
-    suspend fun uploadAvatar(
-        @Body sendImage: SendImage
-    ):Response<String>
-
-
-
 
 }
