@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:context=".ui.mainScreen.MainScreenFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:id="@+id/tvMainScreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/edit_your_data"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+            app:layout_constraintEnd_toEndOf="@id/content_end"
+            app:layout_constraintStart_toStartOf="@id/content_start"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/selectPhoto"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_select_photo"
+            android:src="@drawable/empty_avatar"
+            app:layout_constraintEnd_toEndOf="@id/content_end"
+            app:layout_constraintStart_toStartOf="@id/content_start"
+            app:layout_constraintTop_toBottomOf="@id/tvMainScreen" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImage"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:civ_border_width="3dp"
+            app:layout_constraintBottom_toBottomOf="@id/selectPhoto"
+            app:layout_constraintEnd_toEndOf="@id/selectPhoto"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/selectPhoto"
+            app:layout_constraintTop_toTopOf="@id/selectPhoto"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etLayoutName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/enter_your_name"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="@id/content_end"
+            app:layout_constraintStart_toStartOf="@id/content_start"
+            app:layout_constraintTop_toBottomOf="@id/selectPhoto">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etLayoutSurname"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/enter_your_surname"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="@id/content_end"
+            app:layout_constraintStart_toStartOf="@id/content_start"
+            app:layout_constraintTop_toBottomOf="@id/etLayoutName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSurname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etLayoutMiddleName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/enter_middlename"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="@id/content_end"
+            app:layout_constraintStart_toStartOf="@id/content_start"
+            app:layout_constraintTop_toBottomOf="@id/etLayoutSurname">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etMiddleName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etLayoutPlaceOfBirth"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Place of Birth"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="@id/content_end"
+            app:layout_constraintStart_toStartOf="@id/content_start"
+            app:layout_constraintTop_toBottomOf="@id/etLayoutMiddleName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPlaceOfBirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tvPickupDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Please choose your birthday date"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/datePicker"
+            app:layout_constraintStart_toStartOf="@id/content_start" />
+
+        <Button
+            android:id="@+id/datePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Pick up date"
+            app:layout_constraintEnd_toEndOf="@id/content_end"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@+id/tvPickupDate"
+            app:layout_constraintTop_toBottomOf="@+id/etLayoutPlaceOfBirth" />
+
+        <TextView
+            android:id="@+id/tvSelectedDate"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/content_end"
+            app:layout_constraintStart_toStartOf="@id/content_start"
+            app:layout_constraintTop_toBottomOf="@id/datePicker"
+            tools:text="14/07/1999" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etLayoutOrganization"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/enter_your_organization"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="@id/content_end"
+            app:layout_constraintStart_toStartOf="@id/content_start"
+            app:layout_constraintTop_toBottomOf="@id/tvSelectedDate">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etOrganization"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etLayoutPosition"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/enter_your_position"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="@id/content_end"
+            app:layout_constraintStart_toStartOf="@id/content_start"
+            app:layout_constraintTop_toBottomOf="@id/etLayoutOrganization">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPosition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tvChooseService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Choose hobby"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="@+id/layoutService"
+            app:layout_constraintEnd_toStartOf="@id/layoutService"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/content_start"
+            app:layout_constraintTop_toBottomOf="@id/etLayoutPosition" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutService"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@id/content_end"
+            app:layout_constraintStart_toEndOf="@id/tvChooseService"
+            app:layout_constraintTop_toBottomOf="@id/etLayoutPosition">
+
+            <AutoCompleteTextView
+                android:id="@+id/auTvChooseSetvice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Save"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/content_end"
+            app:layout_constraintStart_toStartOf="@id/content_start"
+            app:layout_constraintTop_toBottomOf="@id/layoutService" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/content_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/content_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

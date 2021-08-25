@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">androidTest</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="register">Register</string>
+    <string name="required">Required</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_surname">Enter your surname</string>
+    <string name="enter_middlename">Enter your middle name</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="re_enter_your_password">Re-Enter your password</string>
+    <string name="login">Login</string>
+    <string name="edit_your_data">Edit your data</string>
+    <string name="enter_your_position">Enter your position</string>
+    <string name="enter_your_organization">Enter your organization</string>
+
+
+    <string-array name="interesting_themes">
+
+        <item>Авто</item>
+        <item>Бизнес</item>
+        <item>Спорт</item>
+        <item>Саморазвитие</item>
+        <item>Здоровье</item>
+        <item>Еда</item>
+        <item>Семья,дети</item>
+        <item>Домашние питомцы</item>
+        <item>Фильмы</item>
+        <item>Компьютерные игры</item>
+        <item>Музыка</item>
+
+    </string-array>
+
+</resources>
