@@ -14,6 +14,8 @@ import androidx.navigation.fragment.findNavController
 import com.bakhus.androidtest.databinding.RegisterFragmentBinding
 import com.bakhus.androidtest.util.Status
 import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class RegisterFragment : Fragment() {
@@ -46,7 +48,6 @@ class RegisterFragment : Fragment() {
 
     private fun subscribeToObservers() {
         viewModel.registerStatus.observe(viewLifecycleOwner, Observer { result ->
-
             result?.let {
                 when (result.status) {
                     Status.SUCCESS -> {
@@ -71,7 +72,6 @@ class RegisterFragment : Fragment() {
                     }
                 }
             }
-
         })
     }
 
@@ -84,5 +84,4 @@ class RegisterFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }
